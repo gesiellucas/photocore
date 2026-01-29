@@ -10,7 +10,9 @@
       "Bash(pkill:*)",
       "Bash(tail:*)",
       "Bash(node -e:*)",
-      "Bash(exiftool:*)"
+      "Bash(exiftool:*)",
+      "Bash(tree:*)",
+      "Bash(git -C \"/home/luacolaborativa/Desktop/photo core\" log --oneline -20)"
     ]
   }
 }
