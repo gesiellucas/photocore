@@ -25,7 +25,7 @@ export default function DropZone({ children, onFileDrop }: DropZoneProps) {
     e.stopPropagation();
     setIsDragOver(false);
 
-    const files = Array.from(e.dataTransfer.files).map((f) => f.path);
+    const files = Array.from(e.dataTransfer.files).map((f) => (f as File & { path: string }).path);
     if (files.length > 0) {
       onFileDrop(files);
     }

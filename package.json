@@ -1,6 +1,6 @@
 {
   "name": "photo-core",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Photo management desktop application",
   "main": "dist-electron/main.js",
   "scripts": {
@@ -15,10 +15,22 @@
     "photo",
     "management",
     "electron",
-    "desktop"
+    "desktop",
+    "photography",
+    "organization",
+    "tagging",
+    "editing",
+    "raw",
+    "jpg",
+    "edited",
+    "linux"
   ],
-  "author": "",
-  "license": "MIT",
+  "author": {
+    "name": "Gesiel Lucas",
+    "email": "gesiel.lucas.f@gmail.com",
+    "url": "https://github.com/gesiellucas"
+  },
+  "license": "GPL-3.0",
   "dependencies": {
     "chokidar": "^3.5.3",
     "exifr": "^7.1.3",

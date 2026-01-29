@@ -16,13 +16,11 @@ function ImageCard({
   showFolder,
   projectPath,
   onTagClick,
-  onTagsChanged
 }: {
   image: ImageFile;
   showFolder: boolean;
   projectPath?: string;
   onTagClick?: (image: ImageFile) => void;
-  onTagsChanged?: () => void;
 }) {
   const { projectImageTags } = useAppStore();
   const [thumbnailSrc, setThumbnailSrc] = useState<string | null>(null);
@@ -31,10 +29,6 @@ function ImageCard({
   // Get tags for this image from the store
   const tagsString = projectImageTags[image.name] || '';
   const imageTags = tagsString ? tagsString.split(',').map(t => t.trim()) : [];
-
-  const isRawFormat = (ext: string) => {
-    return ['.nef', '.raw', '.cr2', '.arw', '.dng'].includes(ext.toLowerCase());
-  };
 
   const formatSize = (bytes: number) => {
     if (bytes < 1024) return bytes + ' B';
@@ -196,7 +190,6 @@ export default function ImageGrid({ images, showFolder = false, projectPath, onT
             showFolder={showFolder}
             projectPath={projectPath}
             onTagClick={handleTagClick}
-            onTagsChanged={handleTagsChanged}
           />
         ))}
       </div>

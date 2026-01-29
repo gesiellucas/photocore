@@ -12,7 +12,9 @@
       "Bash(node -e:*)",
       "Bash(exiftool:*)",
       "Bash(tree:*)",
-      "Bash(git -C \"/home/luacolaborativa/Desktop/photo core\" log --oneline -20)"
+      "Bash(git -C \"/home/luacolaborativa/Desktop/photo core\" log --oneline -20)",
+      "Bash(npm run build:*)",
+      "Bash(ls:*)"
     ]
   }
 }
