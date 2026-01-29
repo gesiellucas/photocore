@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:electron:*)",
+      "Bash(timeout 15 npm run start:*)",
+      "Bash(timeout 20 npm run start:*)",
+      "Bash(npm run start)",
+      "Bash(pkill:*)",
+      "Bash(tail:*)",
+      "Bash(node -e:*)",
+      "Bash(exiftool:*)"
+    ]
+  }
+}

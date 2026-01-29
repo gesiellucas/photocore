@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #1a1a2e;
+  color: #eee;
+  overflow: hidden;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #16213e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0f3460;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e94560;
+}
+
+/* Drag area for titlebar */
+.drag-region {
+  -webkit-app-region: drag;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+/* Drop zone styling */
+.drop-zone {
+  @apply border-2 border-dashed border-gray-600 rounded-xl transition-all duration-200;
+}
+
+.drop-zone.drag-over {
+  @apply border-app-accent bg-app-accent/10 scale-[1.02];
+}
+
+/* Image grid */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+/* Image card */
+.image-card {
+  @apply relative rounded-lg overflow-hidden bg-app-surface cursor-pointer transition-transform duration-200;
+}
+
+.image-card:hover {
+  @apply transform scale-105;
+}
+
+.image-card img {
+  @apply w-full h-40 object-cover;
+}
+
+.image-card .info {
+  @apply p-2 text-sm;
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  @apply fixed inset-0 bg-black/70 flex items-center justify-center z-50;
+}
+
+.modal-content {
+  @apply bg-app-surface rounded-xl p-6 max-w-lg w-full mx-4 shadow-2xl;
+}
+
+/* Button styles */
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+}
+
+.btn-primary {
+  @apply bg-app-accent text-white hover:bg-app-accent/80;
+}
+
+.btn-secondary {
+  @apply bg-app-primary text-white hover:bg-app-primary/80;
+}
+
+.btn-ghost {
+  @apply bg-transparent text-gray-300 hover:bg-white/10;
+}
+
+/* Input styles */
+.input {
+  @apply w-full px-4 py-2 bg-app-bg border border-gray-700 rounded-lg text-white focus:outline-none focus:border-app-accent;
+}
+
+/* Select styles */
+.select {
+  @apply w-full px-4 py-2 bg-app-bg border border-gray-700 rounded-lg text-white focus:outline-none focus:border-app-accent appearance-none cursor-pointer;
+}
+
+/* Filter chip */
+.filter-chip {
+  @apply px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer;
+}
+
+.filter-chip.active {
+  @apply bg-app-accent text-white;
+}
+
+.filter-chip:not(.active) {
+  @apply bg-app-primary text-gray-300 hover:bg-app-primary/80;
+}
+
+/* Project card */
+.project-card {
+  @apply bg-app-surface rounded-xl p-4 cursor-pointer transition-all duration-200 hover:bg-app-primary hover:shadow-lg;
+}
+
+/* Notification toast */
+.toast {
+  @apply fixed bottom-4 right-4 bg-app-surface border border-app-accent rounded-lg p-4 shadow-xl z-50 animate-slide-up;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+/* Loading spinner */
+.spinner {
+  @apply w-6 h-6 border-2 border-app-accent border-t-transparent rounded-full animate-spin;
+}
+
+/* RAW file placeholder */
+.raw-placeholder {
+  @apply w-full h-40 bg-app-primary flex items-center justify-center text-gray-400;
+}
